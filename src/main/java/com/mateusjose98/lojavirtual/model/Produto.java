@@ -18,8 +18,9 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
-
+    @Column(nullable = false)
     private String tipoUnidade;
+    @Column(nullable = false)
     private String nome;
     @Column(columnDefinition = "TEXT", length = 500)
     private String descricao;

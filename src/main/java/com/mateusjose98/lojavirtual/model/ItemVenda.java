@@ -16,10 +16,10 @@ public class ItemVenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
-
+    @Column(nullable = false)
     private Double quantidade;
-    @ManyToOne @JoinColumn
+    @ManyToOne @JoinColumn(nullable = false)
     private Produto produto;
-    @ManyToOne @JoinColumn
+    @ManyToOne @JoinColumn(nullable = false)
     private Venda venda;
 }

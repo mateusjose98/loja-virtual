@@ -21,10 +21,10 @@ public class NotaItemProduto {
 
     private Double quantidade;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private NotaFiscalCompra notaFiscalCompra;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Produto produto;
 
 

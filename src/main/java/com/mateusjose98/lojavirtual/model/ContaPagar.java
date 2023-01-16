@@ -20,9 +20,12 @@ public class ContaPagar implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
+    @Column(nullable = false)
     private String descricao;
+    @Column(nullable = false)
     private LocalDate dataVencimento;
     private LocalDate dataPagamento;
+    @Column(nullable = false)
     private BigDecimal valorTotal;
     private BigDecimal valorDesconto;
     @ManyToOne
@@ -33,6 +36,7 @@ public class ContaPagar implements Serializable {
     private Pessoa pessoaFornecedor;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private StatusContaPagar status;
 
 }

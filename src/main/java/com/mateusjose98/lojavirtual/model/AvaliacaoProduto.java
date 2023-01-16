@@ -16,7 +16,9 @@ public class AvaliacaoProduto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
+    @Column(nullable = false)
     private String descricao;
+    @Column(nullable = false)
     private Integer nota;
     @ManyToOne
     @JoinColumn

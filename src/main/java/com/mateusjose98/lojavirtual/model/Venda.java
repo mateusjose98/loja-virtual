@@ -20,7 +20,7 @@ public class Venda {
     @EqualsAndHashCode.Include
     private Long id;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Pessoa pessoa;
 
     @ManyToOne
@@ -30,7 +30,7 @@ public class Venda {
     @ManyToOne
     @JoinColumn
     private Endereco enderecoCobranca;
-
+    @Column(nullable = false)
     private BigDecimal valorTotal;
     private BigDecimal valorDesconto;
     @ManyToOne
@@ -44,6 +44,7 @@ public class Venda {
     private CupomDesconto cupomDesconto;
     private BigDecimal valorFrete;
     private Integer diaEntrega;
+    @Column(nullable = false)
     private LocalDate vendaEm;
     private LocalDate entregaEm;
 

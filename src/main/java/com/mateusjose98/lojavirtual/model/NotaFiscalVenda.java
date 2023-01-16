@@ -18,14 +18,15 @@ public class NotaFiscalVenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
+    @Column(nullable = false)
     private String numeroNota;
     private String serieNota;
+    @Column(nullable = false)
     private String descricao;
     @Column(columnDefinition = "TEXT")
     private String xml;
     @Column(columnDefinition = "TEXT")
     private String pdf;
-
     @OneToOne(mappedBy = "notaFiscalVenda")
     private Venda venda;
 

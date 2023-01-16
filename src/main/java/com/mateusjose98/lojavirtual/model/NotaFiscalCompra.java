@@ -18,17 +18,21 @@ public class NotaFiscalCompra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
+    @Column(nullable = false)
     private String numeroNota;
+    @Column(nullable = false)
     private String serieNota;
     private String descricao;
+    @Column(nullable = false)
     private BigDecimal valorTotal;
     private BigDecimal valorDesconto;
     private BigDecimal valorICMS;
+    @Column(nullable = false)
     private LocalDate dataCompra;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Pessoa pessoa;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private ContaPagar contaPagar;
 }

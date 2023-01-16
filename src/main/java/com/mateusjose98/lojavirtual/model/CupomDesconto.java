@@ -21,8 +21,10 @@ public class CupomDesconto {
     private Long id;
     @Column(nullable = false)
     private String descricao;
+
     private BigDecimal valorReal;
     private BigDecimal valorPorcentagem;
+
     private LocalDate dataValidadeCupom;
 
 }

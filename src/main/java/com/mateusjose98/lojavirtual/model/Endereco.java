@@ -19,10 +19,12 @@ public class Endereco implements Serializable {
     private Long id;
     @Column(nullable = false)
     private String logradouro;
-
+    @Column(nullable = false)
     private String cep;
+    @Column(nullable = false)
     private String numero;
     private String complemento;
+    @Column(nullable = false)
     private String bairro;
     private String cidade;
     private String uf;

@@ -20,8 +20,9 @@ public class StatusRastreio {
     private String centroDistribuicao;
     private String cidade;
     private String estado;
+    @Column(nullable = false)
     private String status;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Venda venda;
 }
