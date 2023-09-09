@@ -1,10 +1,11 @@
 package com.mateusjose98.lojavirtual.model;
 
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name = "avaliacao_produto")
