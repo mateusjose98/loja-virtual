@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -65,5 +66,10 @@ public class Usuario implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void updatePassword(PasswordEncoder passwordEncoder, String newPassword) {
+        this.setDataUltimaAtualizacaoSenha(LocalDate.now());
+        this.setSenha(passwordEncoder.encode(newPassword));
     }
 }

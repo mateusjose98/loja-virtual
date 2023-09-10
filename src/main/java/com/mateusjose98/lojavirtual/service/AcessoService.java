@@ -1,4 +1,4 @@
-package com.mateusjose98.lojavirtual;
+package com.mateusjose98.lojavirtual.service;
 
 import com.mateusjose98.lojavirtual.model.Acesso;
 import com.mateusjose98.lojavirtual.repository.AcessoRepository;
