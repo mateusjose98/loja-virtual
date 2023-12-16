@@ -36,4 +36,7 @@ public class ContaReceber implements Serializable {
     @Column(nullable = false)
     private StatusContaReceber status;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

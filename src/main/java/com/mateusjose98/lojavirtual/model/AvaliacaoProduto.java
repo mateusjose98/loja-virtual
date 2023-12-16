@@ -27,4 +27,8 @@ public class AvaliacaoProduto {
     @ManyToOne
     @JoinColumn
     private Produto produto;
+
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
 }

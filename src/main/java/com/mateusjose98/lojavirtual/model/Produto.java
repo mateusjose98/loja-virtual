@@ -35,4 +35,7 @@ public class Produto {
     private Boolean alertaQuantidadeEstoqueAtivo;
     private Integer quantidadeClick;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

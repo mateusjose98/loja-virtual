@@ -6,7 +6,6 @@ import com.mateusjose98.lojavirtual.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -46,10 +45,15 @@ public class UsuarioService {
         return null;
     }
 
-    public UsuarioDTO criar(UsuarioDTO dto) {
-        Usuario usuario = new Usuario();
-        BeanUtils.copyProperties(dto, usuario, "dataUltimaAtualizacaoSenha");
+    public UsuarioDTO criar(Usuario usuario) {
         usuario = usuarioRepository.save(usuario);
         return new UsuarioDTO(usuario);
+    }
+
+    public UsuarioDTO findByPessoa(Long pessoaId) {
+        Usuario byPessoa = usuarioRepository.findByPessoa(pessoaId);
+        if(byPessoa == null)
+            return null;
+        return new UsuarioDTO(byPessoa);
     }
 }

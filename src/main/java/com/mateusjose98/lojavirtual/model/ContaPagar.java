@@ -39,4 +39,7 @@ public class ContaPagar implements Serializable {
     @Column(nullable = false)
     private StatusContaPagar status;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

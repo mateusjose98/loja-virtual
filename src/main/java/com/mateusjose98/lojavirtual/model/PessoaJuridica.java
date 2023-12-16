@@ -15,10 +15,8 @@ import lombok.Setter;
 public class PessoaJuridica extends Pessoa{
     @Column(nullable = false)
     private String cnpj;
-
     private String inscricaoEstadual;
     private String inscricaoMunicipal;
-    private String nomeFantasia;
     private String razaoSocial;
     private String categoria;
 }

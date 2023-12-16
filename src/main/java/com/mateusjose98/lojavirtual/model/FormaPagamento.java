@@ -19,4 +19,7 @@ public class FormaPagamento {
     private Long id;
     @Column(nullable = false)
     private String descricao;
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
 }

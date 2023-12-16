@@ -24,4 +24,8 @@ public class ImagemProduto implements Serializable {
     private Produto produto;
 
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
+
 }

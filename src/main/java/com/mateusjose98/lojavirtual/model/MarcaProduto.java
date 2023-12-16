@@ -19,5 +19,8 @@ public class MarcaProduto implements Serializable {
     @Column(nullable = false)
     private String descricao;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 
 }

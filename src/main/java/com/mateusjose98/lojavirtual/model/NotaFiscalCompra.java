@@ -35,4 +35,7 @@ public class NotaFiscalCompra {
     @ManyToOne
     @JoinColumn(nullable = false)
     private ContaPagar contaPagar;
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
 }

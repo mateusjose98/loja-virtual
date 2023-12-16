@@ -27,4 +27,6 @@ public abstract class Pessoa {
     private String telefone;
     @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Endereco> enderecos = new HashSet<>();
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
 }

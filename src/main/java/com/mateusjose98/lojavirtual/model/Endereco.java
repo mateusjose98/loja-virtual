@@ -35,4 +35,7 @@ public class Endereco implements Serializable {
     @Enumerated(EnumType.STRING)
     private TipoEndereco tipoEndereco;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

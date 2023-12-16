@@ -26,4 +26,7 @@ public class StatusRastreio {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Venda venda;
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
 }

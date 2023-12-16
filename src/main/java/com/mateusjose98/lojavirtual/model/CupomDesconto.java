@@ -27,4 +27,7 @@ public class CupomDesconto {
 
     private LocalDate dataValidadeCupom;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

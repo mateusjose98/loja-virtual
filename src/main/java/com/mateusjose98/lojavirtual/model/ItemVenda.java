@@ -24,4 +24,7 @@ public class ItemVenda {
     private Produto produto;
     @ManyToOne @JoinColumn(nullable = false)
     private Venda venda;
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
 }

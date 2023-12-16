@@ -27,4 +27,7 @@ public class NotaFiscalVenda {
     @OneToOne(mappedBy = "notaFiscalVenda")
     private Venda venda;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

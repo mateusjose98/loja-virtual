@@ -48,4 +48,7 @@ public class Venda {
     private LocalDate vendaEm;
     private LocalDate entregaEm;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
 }

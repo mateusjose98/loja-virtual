@@ -33,6 +33,12 @@ public class Usuario implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "acesso_id"))
     private Set<Acesso> acessos = new HashSet<>();
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa pessoa;
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    private Pessoa empresa;
+
     @PreUpdate
     @PrePersist
     void preUpdate() {
@@ -77,5 +83,12 @@ public class Usuario implements UserDetails {
     public void updatePassword(PasswordEncoder passwordEncoder, String newPassword) {
         this.setDataUltimaAtualizacaoSenha(LocalDate.now());
         this.setSenha(passwordEncoder.encode(newPassword));
+    }
+
+    public Usuario from(String rawPass, String senha, Pessoa pessoa) {
+        this.login = rawPass;
+        this.senha = senha;
+        this.pessoa = pessoa;
+        return this;
     }
 }
