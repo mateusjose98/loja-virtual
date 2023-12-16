@@ -33,6 +33,12 @@ public class Usuario implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "acesso_id"))
     private Set<Acesso> acessos = new HashSet<>();
 
+    @PreUpdate
+    @PrePersist
+    void preUpdate() {
+        this.dataUltimaAtualizacaoSenha = LocalDate.now();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return acessos;

@@ -1,4 +1,4 @@
-package com.mateusjose98.lojavirtual.controller;
+package com.mateusjose98.lojavirtual.exceptions;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
