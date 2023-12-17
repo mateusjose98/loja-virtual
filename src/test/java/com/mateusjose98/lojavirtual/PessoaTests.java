@@ -35,7 +35,8 @@ public class PessoaTests {
     void criarPJ() {
         PessoaJuridica pessoa = new PessoaJuridica();
         pessoa.setCnpj("9009009" + new Random().nextInt(1, 100));
-        pessoa.setEmail("jose" + new Random().nextInt(1, 50) + ".teste@"+ Arrays.asList("gmail", "hotmail", "bol", "yahoo").get( new Random().nextInt(0, 4)) +".com");
+        //pessoa.setEmail("jose" + new Random().nextInt(1, 50) + ".teste@"+ Arrays.asList("gmail", "hotmail", "bol", "yahoo").get( new Random().nextInt(0, 4)) +".com");
+        pessoa.setEmail("josemateus.ufma@gmail.com");
         pessoa.setInscricaoEstadual("972");
         pessoa.setNome("Casarão Tech " + new Random().nextInt(1, 100));
         pessoa.setTelefone("9899989898");

@@ -3,14 +3,11 @@ package com.mateusjose98.lojavirtual.service;
 import com.mateusjose98.lojavirtual.model.*;
 import com.mateusjose98.lojavirtual.repository.PessoaFisicaRepository;
 import com.mateusjose98.lojavirtual.repository.PessoaJuridicaRepository;
-import com.mateusjose98.lojavirtual.service.enums.EmailType;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 @Transactional
@@ -38,7 +35,13 @@ public class PessoaService {
         String senha = passwordEncoder.encode(rawPass);
         usuarioService.criar(new Usuario().from(rawPass,
                 senha, pessoa));
-        emailService.enviar(pessoa.getEmail(), Map.of("senha", senha), EmailType.PASSWORD_CREATED);
+        var emailInfo = new EmailServiceImpl.EmailInfo(
+                "Nova conta",
+                pessoa.getEmail(),
+                null,
+                String.format("Olá, %s, sua senha é: %s", pessoa.getNome(), rawPass),
+                false);
+        emailService.enviar(emailInfo);
     }
 
     public boolean existsByCnpj(String cnpj) {

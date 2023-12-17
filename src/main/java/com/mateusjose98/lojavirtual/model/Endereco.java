@@ -28,6 +28,7 @@ public class Endereco implements Serializable {
     private String bairro;
     private String cidade;
     private String uf;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private Pessoa pessoa;

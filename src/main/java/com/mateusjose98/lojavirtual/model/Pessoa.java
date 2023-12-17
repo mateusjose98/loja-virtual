@@ -5,9 +5,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @Getter
 @Setter
@@ -25,8 +22,8 @@ public abstract class Pessoa {
     private String email;
     @Column(nullable = false)
     private String telefone;
-    @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Endereco> enderecos = new HashSet<>();
+//    @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Set<Endereco> enderecos = new HashSet<>();
     @ManyToOne(targetEntity = Pessoa.class)
     private Pessoa empresa;
 }

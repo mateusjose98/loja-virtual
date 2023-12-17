@@ -17,12 +17,21 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-#    show-sql: true
-#    format-sql: true
   servlet:
     multipart:
       max-file-size: 10MB
       max-request-size: 15MB
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: ${EMAIL_SERVER}
+    username: ${EMAIL_USER}
+    password: ${EMAIL_PASSWORD}
+    port: ${EMAIL_PORT}
 
 secretKey: 1b2d7a2079285f016ee03c922440bdfaa6cdc31ab0e0a9f98c018b6528ae78d4
 
@@ -32,3 +41,6 @@ logging:
       ttddyy:
         dsproxy:
           listener: debug
+
+
+
